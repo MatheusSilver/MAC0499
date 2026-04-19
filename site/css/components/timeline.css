@@ -1,0 +1,111 @@
+.task-table-wrap {
+    position: relative;
+    margin-top: 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.task-table-content {
+    position: relative;
+    min-width: 100%;
+}
+
+.current-time-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ff5c7a;
+    z-index: 2;
+    box-shadow: 0 0 0 1px rgba(255, 92, 122, 0.25);
+    pointer-events: none;
+    display: none;
+}
+
+.current-time-marker::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff5c7a;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+.task-table th,
+.task-table td {
+    text-align: left;
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+}
+
+.task-name-col {
+    width: 28%;
+}
+
+.timeline-scale {
+    display: flex;
+    gap: 0;
+}
+
+.scale-month {
+    flex: 1 1 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.scale-month.future {
+    color: #ffffff;
+}
+
+.timeline-track {
+    position: relative;
+    height: 16px;
+    border-radius: 999px;
+    background: rgba(130, 138, 150, 0.38);
+    overflow: hidden;
+}
+
+.segment {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.segment.future {
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.segment.active {
+    background: rgba(47, 129, 247, 0.78);
+}
+
+.segment.done {
+    background: rgba(83, 209, 124, 0.80);
+}
+
+.segment.delay {
+    background: rgba(255, 92, 92, 0.78);
+}
+
+.task-table thead th {
+    background: var(--card-soft);
+    color: var(--text);
+    font-weight: 700;
+}
+
+.task-table tbody tr:last-child td {
+    border-bottom: none;
+}

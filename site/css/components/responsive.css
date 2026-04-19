@@ -1,0 +1,58 @@
+@media (min-width: 1000px) {
+    body {
+        font-size: 17px;
+    }
+    
+    .documents-section,
+    .tasks-section {
+        padding: 26px;
+    }
+
+    .person {
+        min-height: 98px;
+    }
+
+    .actions button {
+        min-height: 122px;
+    }
+
+    .doc-thumb {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 520px) {
+    .person {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .actions {
+        grid-template-columns: 1fr;
+    }
+
+    .actions button {
+        grid-template-columns: 48px 1fr;
+    }
+
+    .doc-thumb {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 760px) {
+    .task-table-wrap {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .task-table {
+        min-width: 920px;
+    }
+
+    .scale-month {
+        flex: 0 0 72px;
+    }
+}
