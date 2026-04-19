@@ -28,6 +28,10 @@
         justify-items: start;
     }
 
+    .student-row .person {
+        flex: 1 1 100%;
+    }
+
     .actions {
         grid-template-columns: 1fr;
     }
