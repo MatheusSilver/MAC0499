@@ -36,12 +36,17 @@ export async function findAvailableDocumentPath(path) {
     const trimmedPath = path.trim();
     const normalizedPath = trimmedPath.replace(/^\.\//, "");
     const noLeadingSlash = normalizedPath.replace(/^\//, "");
+    const withSitePrefix = noLeadingSlash.startsWith("site/") ? noLeadingSlash : "site/" + noLeadingSlash;
 
     const candidates = unique([
         trimmedPath,
         "./" + noLeadingSlash,
         "../" + noLeadingSlash,
-        "/" + noLeadingSlash
+        "/" + noLeadingSlash,
+        withSitePrefix,
+        "./" + withSitePrefix,
+        "../" + withSitePrefix,
+        "/" + withSitePrefix
     ]);
 
     for (const candidate of candidates) {
