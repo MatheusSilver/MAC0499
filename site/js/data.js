@@ -3,18 +3,18 @@ export const githubRepo = "MatheusSilver/MAC0499";
 export const documents = {
     proposal: {
         title: "Proposta",
-        path: "../docs/Proposta.pdf",
-        repoPath: "docs/Proposta.pdf"
+        path: "docs/Proposta.pdf",
+        repoPath: "site/docs/Proposta.pdf"
     },
     poster: {
         title: "Poster",
-        path: "../docs/Poster.pdf",
-        repoPath: "docs/Poster.pdf"
+        path: "docs/Poster.pdf",
+        repoPath: "site/docs/Poster.pdf"
     },
     thesis: {
         title: "Monografia",
-        path: "../docs/Monografia.pdf",
-        repoPath: "docs/Monografia.pdf"
+        path: "docs/Monografia.pdf",
+        repoPath: "site/docs/Monografia.pdf"
     }
 };
 
