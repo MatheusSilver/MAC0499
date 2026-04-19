@@ -23,3 +23,34 @@ export async function isDocumentAvailable(path) {
         return false;
     }
 }
+
+function unique(values) {
+    return [...new Set(values.filter(Boolean))];
+}
+
+export async function findAvailableDocumentPath(path) {
+    if (!path || !path.trim()) {
+        return "";
+    }
+
+    const trimmedPath = path.trim();
+    const normalizedPath = trimmedPath.replace(/^\.\//, "");
+    const noLeadingSlash = normalizedPath.replace(/^\//, "");
+
+    const candidates = unique([
+        trimmedPath,
+        "./" + noLeadingSlash,
+        "../" + noLeadingSlash,
+        "/" + noLeadingSlash
+    ]);
+
+    for (const candidate of candidates) {
+        // eslint-disable-next-line no-await-in-loop
+        const available = await isDocumentAvailable(candidate);
+        if (available) {
+            return candidate;
+        }
+    }
+
+    return "";
+}
