@@ -1,4 +1,4 @@
-import { findAvailableDocumentPath } from "../services/documentService.js";
+import { isDocumentAvailable } from "../services/documentService.js";
 
 export function initDocumentButtons(documents, elements, getLastUpdateText) {
     const { buttons, docView } = elements;
@@ -15,13 +15,13 @@ export function initDocumentButtons(documents, elements, getLastUpdateText) {
             const documentData = documents[documentKey];
             const documentPath = documentData?.path;
 
-            const resolvedPath = await findAvailableDocumentPath(documentPath);
-            if (!resolvedPath) {
+            const available = await isDocumentAvailable(documentPath);
+            if (!available) {
                 docView.innerHTML = '<p class="doc-status">Este documento ainda não foi publicado.</p>';
                 return;
             }
 
-            docView.innerHTML = '<iframe class="doc-frame" src="' + resolvedPath + '#toolbar=1" title="Documento em PDF"></iframe><p class="doc-meta">Consultando última atualização...</p>';
+            docView.innerHTML = '<iframe class="doc-frame" src="' + documentPath + '#toolbar=1" title="Documento em PDF"></iframe><p class="doc-meta">Consultando última atualização...</p>';
 
             const updateText = await getLastUpdateText(documentData.title, documentData.repoPath);
             const metaElement = docView.querySelector(".doc-meta");
