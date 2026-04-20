@@ -68,3 +68,8 @@ h2 {
     font-size: 0.88rem;
     line-height: 1.45;
 }
+
+.copyleft {
+    display: inline-block;
+    transform: rotate(180deg);
+}
