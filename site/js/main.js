@@ -42,10 +42,29 @@ async function getPageUpdateText() {
 
 function initApp() {
     const elements = getElements();
+    const pageShell = document.querySelector(".page-shell");
 
     initDocumentButtons(documents, elements, getDocumentUpdateText);
     renderTimeline(schedule, elements);
     renderPageLastUpdate(elements.pageLastUpdate, getPageUpdateText);
+
+    const revealPage = () => {
+        if (!pageShell) {
+            return;
+        }
+
+        pageShell.style.transition = "opacity 420ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1)";
+        pageShell.style.opacity = "1";
+        pageShell.style.transform = "translateY(0)";
+    };
+
+    if (document.readyState === "complete") {
+        requestAnimationFrame(revealPage);
+    } else {
+        window.addEventListener("load", () => {
+            requestAnimationFrame(revealPage);
+        }, { once: true });
+    }
 
     window.addEventListener("resize", () => {
         renderTimeline(schedule, elements);

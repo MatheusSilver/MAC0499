@@ -5,118 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.ime.usp.br/media/2019/02/favicon.ico" sizes="32x32" />
     <title>TCC - Matheus Silveira</title>
+    <style>
+        body {
+            background-color: #0d1117;
+        }
+    </style>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <main class="container">
-        <section class="hero-center">
-            <h1>Assistente Conversacional para Avaliação e Melhoria da Qualidade do Código com LLMs</h1>
-            <p class="muted">MAC0499 - Trabalho de Formatura Supervisionado</p>
-        </section>
+    <div class="page-shell" style="opacity: 0; transform: translateY(16px);">
+        <main class="container">
+            <section class="hero-center">
+                <h1>Assistente Conversacional para Avaliação e Melhoria da Qualidade do Código com LLMs</h1>
+                <p class="muted">MAC0499 - Trabalho de Formatura Supervisionado</p>
+            </section>
 
-        <section>
-            <div class="group">
-                <div class="group-label">Aluno</div>
-                <div class="people-row student-row">
-                    <div class="person">
-                        <div class="photo">
-                            <img src="https://lh3.googleusercontent.com/a/ACg8ocI7wAQ2cQ28mAwouoLzvH85eyJRPz9ddGEcoL8Qmluu9BejnxA=s288-c-no" alt="Foto de Matheus Silveira Feitosa">
-                        </div>
-                        <div>
-                            <div class="name">Matheus Silveira Feitosa</div>
+            <section>
+                <div class="group">
+                    <div class="group-label">Aluno</div>
+                    <div class="people-row student-row">
+                        <div class="person">
+                            <div class="photo">
+                                <img src="https://lh3.googleusercontent.com/a/ACg8ocI7wAQ2cQ28mAwouoLzvH85eyJRPz9ddGEcoL8Qmluu9BejnxA=s288-c-no" alt="Foto de Matheus Silveira Feitosa">
+                            </div>
+                            <div>
+                                <div class="name">Matheus Silveira Feitosa</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="group">
-                <div class="group-label">Orientadores</div>
-                <div class="people-row">
-                    <div class="person">
-                        <div class="photo">
-                            <img src="https://www.ime.usp.br/media/_contatos/img/33b-83c-334-83a-236.jpg" alt="Foto do Prof. Dr. Fabio Kon">
+                <div class="group">
+                    <div class="group-label">Orientadores</div>
+                    <div class="people-row">
+                        <div class="person">
+                            <div class="photo">
+                                <img src="https://www.ime.usp.br/media/_contatos/img/33b-83c-334-83a-236.jpg" alt="Foto do Prof. Dr. Fabio Kon">
+                            </div>
+                            <div>
+                                <div class="name">Prof. Dr. Fabio Kon</div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="name">Prof. Dr. Fabio Kon</div>
+
+                        <div class="person">
+                            <div class="photo">
+                                <img src="https://www.ime.usp.br/~paulormm/assets/img/Softsys5.png" alt="Foto do Prof. Dr. Paulo Meirelles">
+                            </div>
+                            <div>
+                                <div class="name">Prof. Dr. Paulo Meirelles</div>
+                            </div>
                         </div>
+
                     </div>
+                </div>
+            </section>
 
-                    <div class="person">
-                        <div class="photo">
-                            <img src="https://www.ime.usp.br/~paulormm/assets/img/Softsys5.png" alt="Foto do Prof. Dr. Paulo Meirelles">
-                        </div>
-                        <div>
-                            <div class="name">Prof. Dr. Paulo Meirelles</div>
-                        </div>
+            <section class="tasks-section">
+                <h2>Acompanhamento de Tarefas</h2>
+                <p id="task-month-note" class="muted"></p>
+                <div class="task-table-wrap">
+                    <div class="task-table-content">
+                        <div id="current-time-marker" class="current-time-marker" aria-hidden="true"></div>
+                        <table class="task-table" aria-label="Tabela de acompanhamento do cronograma">
+                            <thead>
+                                <tr id="task-table-head-row">
+                                    <th class="task-name-col">Tarefa</th>
+                                </tr>
+                            </thead>
+                            <tbody id="task-table-body"></tbody>
+                        </table>
                     </div>
-
-                    <!-- <div class="person">
-                        <div class="photo">
-                            <img src="https://www.igor.pro.br/images/images/steinmacherigor.jpg" alt="Foto do Prof. Dr. Igor Steinmacher">
-                        </div>
-                        <div>
-                            <div class="name">Prof. Dr. Igor Steinmacher</div>
-                        </div>
-                    </div> -->
-
-                    <!-- Aguardando saber se o professor Igor de fato será coorientador do projeto -->
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="tasks-section">
-            <h2>Acompanhamento de Tarefas</h2>
-            <p id="task-month-note" class="muted"></p>
-            <div class="task-table-wrap">
-                <div class="task-table-content">
-                    <div id="current-time-marker" class="current-time-marker" aria-hidden="true"></div>
-                    <table class="task-table" aria-label="Tabela de acompanhamento do cronograma">
-                        <thead>
-                            <tr id="task-table-head-row">
-                                <th class="task-name-col">Tarefa</th>
-                            </tr>
-                        </thead>
-                        <tbody id="task-table-body"></tbody>
-                    </table>
+            <section class="documents-section">
+                <h2>Documentos</h2>
+                <div class="actions">
+                    <button type="button" data-doc="proposal" aria-label="Abrir proposta">
+                        <span class="doc-thumb" aria-hidden="true">
+                            <img src="https://images.icon-icons.com/1377/PNG/512/applicationpdf_92726.png" alt="">
+                        </span>
+                        <span class="doc-text">
+                            <span class="doc-title">Proposta</span>
+                        </span>
+                    </button>
+                    <button type="button" data-doc="poster" aria-label="Abrir poster">
+                        <span class="doc-thumb" aria-hidden="true">
+                            <img src="https://images.icon-icons.com/1377/PNG/512/applicationpdf_92726.png" alt="">
+                        </span>
+                        <span class="doc-text">
+                            <span class="doc-title">Poster</span>
+                        </span>
+                    </button>
+                    <button type="button" data-doc="thesis" aria-label="Abrir monografia">
+                        <span class="doc-thumb" aria-hidden="true">
+                            <img src="https://images.icon-icons.com/1377/PNG/512/applicationpdf_92726.png" alt="">
+                        </span>
+                        <span class="doc-text">
+                            <span class="doc-title">Monografia</span>
+                        </span>
+                    </button>
                 </div>
-            </div>
-        </section>
-
-        <section class="documents-section">
-            <h2>Documentos</h2>
-            <div class="actions">
-                <button type="button" data-doc="proposal" aria-label="Abrir proposta">
-                    <span class="doc-thumb" aria-hidden="true">
-                        <img src="https://images.icon-icons.com/1377/PNG/512/applicationpdf_92726.png" alt="">
-                    </span>
-                    <span class="doc-text">
-                        <span class="doc-title">Proposta</span>
-                    </span>
-                </button>
-                <button type="button" data-doc="poster" aria-label="Abrir poster">
-                    <span class="doc-thumb" aria-hidden="true">
-                        <img src="https://images.icon-icons.com/1377/PNG/512/applicationpdf_92726.png" alt="">
-                    </span>
-                    <span class="doc-text">
-                        <span class="doc-title">Poster</span>
-                    </span>
-                </button>
-                <button type="button" data-doc="thesis" aria-label="Abrir monografia">
-                    <span class="doc-thumb" aria-hidden="true">
-                        <img src="https://images.icon-icons.com/1377/PNG/512/applicationpdf_92726.png" alt="">
-                    </span>
-                    <span class="doc-text">
-                        <span class="doc-title">Monografia</span>
-                    </span>
-                </button>
-            </div>
-            <div id="doc-view"></div>
-        </section>
-    </main>
-    <footer class="footer-note">
-        <p id="page-last-update">Última atualização da página: consultando...</p>
-        <p>🄯 Matheus Silveira Feitosa</p>
-    </footer>
+                <div id="doc-view"></div>
+            </section>
+        </main>
+        <footer class="footer-note">
+            <p id="page-last-update">Última atualização da página: consultando...</p>
+            <p>🄯 Matheus Silveira Feitosa</p>
+        </footer>
+    </div>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

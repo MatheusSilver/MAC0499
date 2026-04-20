@@ -8,6 +8,11 @@
     --card-soft: #11161d;
 }
 
+html {
+    min-height: 100%;
+    background: var(--bg);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,8 +21,9 @@
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
+    background: transparent;
     color: var(--text);
+    min-height: 100%;
     padding: 24px 16px;
 }
 
